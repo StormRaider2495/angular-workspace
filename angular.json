@@ -2,5 +2,302 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "vocabulary-game-engine": {
+      "root": "projects/vocabulary-game-engine/",
+      "sourceRoot": "projects/vocabulary-game-engine/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/vocabulary-game-engine",
+            "index": "projects/vocabulary-game-engine/src/index.html",
+            "main": "projects/vocabulary-game-engine/src/main.ts",
+            "polyfills": "projects/vocabulary-game-engine/src/polyfills.ts",
+            "tsConfig": "projects/vocabulary-game-engine/tsconfig.app.json",
+            "assets": [
+              "projects/vocabulary-game-engine/src/favicon.ico",
+              "projects/vocabulary-game-engine/src/assets"
+            ],
+            "styles": [
+              "projects/vocabulary-game-engine/src/styles.css"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/vocabulary-game-engine/src/environments/environment.ts",
+                  "with": "projects/vocabulary-game-engine/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "vocabulary-game-engine:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vocabulary-game-engine:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vocabulary-game-engine:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/vocabulary-game-engine/src/test.ts",
+            "polyfills": "projects/vocabulary-game-engine/src/polyfills.ts",
+            "tsConfig": "projects/vocabulary-game-engine/tsconfig.spec.json",
+            "karmaConfig": "projects/vocabulary-game-engine/karma.conf.js",
+            "styles": [
+              "projects/vocabulary-game-engine/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/vocabulary-game-engine/src/favicon.ico",
+              "projects/vocabulary-game-engine/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vocabulary-game-engine/tsconfig.app.json",
+              "projects/vocabulary-game-engine/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vocabulary-game-engine-e2e": {
+      "root": "projects/vocabulary-game-engine-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/vocabulary-game-engine-e2e/protractor.conf.js",
+            "devServerTarget": "vocabulary-game-engine:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vocabulary-game-engine:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/vocabulary-game-engine-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vocabulary-game-authoring": {
+      "root": "projects/vocabulary-game-authoring/",
+      "sourceRoot": "projects/vocabulary-game-authoring/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/vocabulary-game-authoring",
+            "index": "projects/vocabulary-game-authoring/src/index.html",
+            "main": "projects/vocabulary-game-authoring/src/main.ts",
+            "polyfills": "projects/vocabulary-game-authoring/src/polyfills.ts",
+            "tsConfig": "projects/vocabulary-game-authoring/tsconfig.app.json",
+            "assets": [
+              "projects/vocabulary-game-authoring/src/favicon.ico",
+              "projects/vocabulary-game-authoring/src/assets"
+            ],
+            "styles": [
+              "projects/vocabulary-game-authoring/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/vocabulary-game-authoring/src/environments/environment.ts",
+                  "with": "projects/vocabulary-game-authoring/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vocabulary-game-authoring:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vocabulary-game-authoring:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vocabulary-game-authoring:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vocabulary-game-authoring/src/test.ts",
+            "polyfills": "projects/vocabulary-game-authoring/src/polyfills.ts",
+            "tsConfig": "projects/vocabulary-game-authoring/tsconfig.spec.json",
+            "karmaConfig": "projects/vocabulary-game-authoring/karma.conf.js",
+            "styles": [
+              "projects/vocabulary-game-authoring/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/vocabulary-game-authoring/src/favicon.ico",
+              "projects/vocabulary-game-authoring/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vocabulary-game-authoring/tsconfig.app.json",
+              "projects/vocabulary-game-authoring/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vocabulary-game-authoring-e2e": {
+      "root": "projects/vocabulary-game-authoring-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/vocabulary-game-authoring-e2e/protractor.conf.js",
+            "devServerTarget": "vocabulary-game-authoring:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vocabulary-game-authoring:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/vocabulary-game-authoring-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "common-game-components": {
+      "root": "projects/common-game-components",
+      "sourceRoot": "projects/common-game-components/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/common-game-components/tsconfig.lib.json",
+            "project": "projects/common-game-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/common-game-components/src/test.ts",
+            "tsConfig": "projects/common-game-components/tsconfig.spec.json",
+            "karmaConfig": "projects/common-game-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/common-game-components/tsconfig.lib.json",
+              "projects/common-game-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "vocabulary-game-engine"
 }

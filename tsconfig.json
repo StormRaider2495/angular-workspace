@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "common-game-components": [
+        "dist/common-game-components"
+      ],
+      "common-game-components/*": [
+        "dist/common-game-components/*"
+      ]
+    }
   }
 }
