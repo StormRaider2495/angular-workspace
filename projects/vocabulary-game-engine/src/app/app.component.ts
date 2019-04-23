@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonGameComponentsService } from './../../../common-game-components/src/lib/common-game-components.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-vocabulary-engine',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
