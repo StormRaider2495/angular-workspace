@@ -1,9 +1,7 @@
 var fs = require('fs');
 const MERGE = require('concat');
 const jsdom = require('jsdom');
-const {
-  JSDOM
-} = jsdom;
+const { JSDOM } = jsdom;
 const DEFAULT_APP = "vocabulary-game-engine";
 
 const args = process.argv.splice(2);
