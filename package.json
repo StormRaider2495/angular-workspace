@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:vocabulary": "ng serve vocabulary-game-engine",
-    "build:vocabulary": "ng build vocabulary-game-engine --prod --output-hashing=none --single-bundle=true && node ./mergelib.js --AppName=vocabulary-game-engine"
+    "build:vocabulary": "ng build vocabulary-game-engine --prod --output-hashing=none --single-bundle=true && npm run singlePackage -- vocabulary-game-engine",
+    "singlePackage": "node ./mergelib.js",
+    "buildApp": "ng build vocabulary-game-engine --prod --output-hashing=none --single-bundle=true"
   },
   "private": true,
   "dependencies": {
