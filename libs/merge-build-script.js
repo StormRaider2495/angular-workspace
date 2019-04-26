@@ -17,11 +17,14 @@ if (folderName) {
     destinationPath + '/scripts.js',
     destinationPath + '/main.js'
   ];
+
+  var updatedFilesArray = filesPresentArray(files);
+
   const newFiles = [
     './combined-' + folderName + '.js'
   ];
   const mergedFileName = 'combined-' + folderName + '.js';
-  MERGE(files, destinationPath + '/' + mergedFileName).then((result) => {
+  MERGE(updatedFilesArray, destinationPath + '/' + mergedFileName).then((result) => {
     console.info(mergedFileName + ' file generated');
     updateScriptTags(
       destinationPath + '/index.html',
@@ -80,6 +83,16 @@ function isScriptMerged(scriptSrc, scriptPaths) {
     }
   }
   return false
+}
+
+function filesPresentArray(files) {
+  let updatedFilesArray = [];
+  for (let index = 0; index < files.length; index++) {
+    if(fs.existsSync(files[index])) {
+      updatedFilesArray.push(files[index]);
+    }
+  }
+  return updatedFilesArray;
 }
 
 function appendScripts(document, newScriptPath) {

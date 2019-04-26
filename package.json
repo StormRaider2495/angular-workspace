@@ -9,9 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "singlePackage": "node ./libs/merge-build-script.js",
+    "serveApp": "node ./libs/custom-serve-script.js",
+    "buildApp": "node ./libs/custom-build-script.js",
     "start:vocabulary": "ng serve vocabulary-game-engine",
-    "build:vocabulary": "ng build vocabulary-game-engine --prod --output-hashing=none --single-bundle=true && npm run singlePackage vocabulary-game-engine",
-    "buildApp": "node ./libs/custom-build-script.js"
+    "build:vocabulary": "ng build vocabulary-game-engine --prod --output-hashing=none --single-bundle=true && npm run singlePackage vocabulary-game-engine"
   },
   "private": true,
   "dependencies": {

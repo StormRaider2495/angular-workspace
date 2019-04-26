@@ -1,9 +1,17 @@
 const child_process = require('child_process');
 const DEFAULT_APP = "vocabulary-game-engine";
 
-const args = process.argv.splice(2);
+const args = process.argv;
 
-var buildAppName = args.length > 0 ? args : DEFAULT_APP;
+var buildConfig = {};
+console.log(args);
+
+for (let index = 2; index < args.length; index++) {
+  const input = '' + args[index];
+    buildConfig[input.split(':')[0].replace(/--/gi, '')] = input.split(':')[1];
+}
+
+var buildAppName = buildConfig.appName ? buildConfig.appName : DEFAULT_APP
 
 if (buildAppName) {
   // form the build command for the application
