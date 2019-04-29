@@ -11,12 +11,40 @@
  * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
  * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
  *
- * Learn more in https://angular.io/guide/browser-support
+ * Learn more in `https://angular.io/guide/browser-support`
  */
 
 /***************************************************************************************************
  * BROWSER POLYFILLS
  */
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. */
+import 'core-js/es6/array';
+import 'core-js/es6/date';
+import 'core-js/es6/function';
+import 'core-js/es6/map';
+import 'core-js/es6/math';
+import 'core-js/es6/number';
+import 'core-js/es6/object';
+import 'core-js/es6/parse-float';
+import 'core-js/es6/parse-int';
+import 'core-js/es6/promise';
+import 'core-js/es6/regexp';
+import 'core-js/es6/string';
+import 'core-js/es6/set';
+import 'core-js/es6/symbol';
+import 'core-js/es6/weak-map';
+
+/** IE10 and IE11 requires the following for the Reflect API. */
+import 'core-js/es6/reflect';
+
+/** IE requires the following polyfills for ES7 support. */
+import 'core-js/es7/array';
+import 'core-js/es7/object';
+
+/** Evergreen browsers require these. */
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es7/reflect';
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 // import 'classlist.js';  // Run `npm install --save classlist.js`.
@@ -51,6 +79,8 @@
  *  (window as any).__Zone_enable_cross_context_check = true;
  *
  */
+// added as a fix for `cannot run code from a freed script` error in IE
+(window as any).__Zone_enable_cross_context_check = true;
 
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
@@ -61,3 +91,13 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/**  Polyfill needed for HTMLELEMENT creation */
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+
+/**
+ * Custom Elements `@webcomponents/custom-elements`
+ * We also need a polyfill for browsers that don't support Web Components.
+ * Hence, npm installed @webcomponents/custom-elements and referenced it here
+ */
+import '@webcomponents/custom-elements/custom-elements.min.js';

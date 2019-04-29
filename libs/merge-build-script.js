@@ -12,8 +12,9 @@ console.log('argument received: ' + folderName);
 if (folderName) {
   const destinationPath = './dist/' + folderName;
   const files = [
-    './libs/zone.min.js',
+    destinationPath + '/runtime.js',
     destinationPath + '/es2015-polyfills.js',
+    destinationPath + '/polyfills.js',
     destinationPath + '/scripts.js',
     destinationPath + '/main.js'
   ];
