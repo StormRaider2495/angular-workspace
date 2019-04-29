@@ -68,7 +68,7 @@ function updateScriptTags(indexHtmlPath, updatedHtmlPath, scriptPaths, newScript
 }
 
 function serializeDocumentObject(domObject) {
-  return domObject.documentElement.outerHTML
+  return '<!doctype html>' + domObject.documentElement.outerHTML
 }
 
 function isScriptMerged(scriptSrc, scriptPaths) {
