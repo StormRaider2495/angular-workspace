@@ -80,7 +80,6 @@ import 'core-js/es7/reflect';
  *
  */
 // added as a fix for `cannot run code from a freed script` error in IE
-(window as any).__Zone_enable_cross_context_check = true;
 
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
