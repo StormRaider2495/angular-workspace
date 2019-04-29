@@ -4,8 +4,7 @@ import { CommonGameComponentsService } from './../../../common-game-components/s
 @Component({
   selector: 'app-vocabulary-engine',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'vocabulary-game-engine';

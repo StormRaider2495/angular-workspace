@@ -12,11 +12,12 @@ const child_process = require('child_process');
 const DEFAULT_APP = "vocabulary-game-engine";
 
 const args = process.argv;
+console.log(args);
 
 var buildConfig = {};
 for (let index = 2; index < args.length; index++) {
   const input = '' + args[index];
-  if (input === '-o') {
+  if (input === 'o'||input === '-o') {
     buildConfig['open'] = true;
   } else {
     buildConfig[input.split(':')[0].replace(/--/gi, '')] = input.split(':')[1];
