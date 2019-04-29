@@ -11,10 +11,12 @@ var folderName = args.length > 0 ? args : DEFAULT_APP;
 console.log('argument received: ' + folderName);
 if (folderName) {
   const destinationPath = './dist/' + folderName;
+  // scripts.js contain all the build dependencies added in scripts array in angular.json
+  // and must be loaded before zone.js
   const files = [
+    destinationPath + '/scripts.js',
     './libs/zone.min.js',
     destinationPath + '/es2015-polyfills.js',
-    destinationPath + '/scripts.js',
     destinationPath + '/main.js'
   ];
 

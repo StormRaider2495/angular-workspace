@@ -92,11 +92,20 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 
 /**  Polyfill needed for HTMLELEMENT creation */
-// import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
 
-/**
- * Custom Elements `@webcomponents/custom-elements`
- * We also need a polyfill for browsers that don't support Web Components.
- * Hence, npm installed @webcomponents/custom-elements and referenced it here
+/**  Polyfills for Browsers supporting Custom Elements.
+ * Needed b/c we downlevel to ES5. See: @webcomponents/custom-elements
  */
-// import '@webcomponents/custom-elements/custom-elements.min.js';
+import '@webcomponents/custom-elements/src/native-shim.js';
+
+/**  Polyfills for Browsers not supporting Custom Elements.
+ * See: @webcomponents/custom-elements Consider only loading when such a browser is used
+ */
+import '@webcomponents/custom-elements/custom-elements.min.js';
+
+// if (!window.customElements) {
+//   const script = document.createElement('script');
+//   script.src = './assets/webcomponentsjs/bundles/webcomponents-sd-ce.js';
+//   document.writeln(script.outerHTML);
+// }

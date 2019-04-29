@@ -27,6 +27,15 @@
             ],
             "scripts": [
               {
+                "input": "assets/custom-elements/src/native-shim.js"
+              },
+              {
+                "input": "assets/custom-elements/custom-elements.min.js"
+              },
+              {
+                "input": "assets/core-js/core.js"
+              },
+              {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
             ],
@@ -34,12 +43,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/vocabulary-game-engine/src/environments/environment.ts",
-                  "with": "projects/vocabulary-game-engine/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/vocabulary-game-engine/src/environments/environment.ts",
+                "with": "projects/vocabulary-game-engine/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,13 +56,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -157,17 +162,27 @@
             "styles": [
               "projects/vocabulary-game-authoring/src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [{
+                "input": "assets/custom-elements/src/native-shim.js"
+              },
+              {
+                "input": "assets/custom-elements/custom-elements.min.js"
+              },
+              {
+                "input": "assets/core-js/core.js"
+              },
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/vocabulary-game-authoring/src/environments/environment.ts",
-                  "with": "projects/vocabulary-game-authoring/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "projects/vocabulary-game-authoring/src/environments/environment.ts",
+                "with": "projects/vocabulary-game-authoring/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -177,13 +192,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
