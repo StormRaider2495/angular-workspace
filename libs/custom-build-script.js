@@ -15,7 +15,7 @@ var buildAppName = buildConfig.appName ? buildConfig.appName : DEFAULT_APP
 
 if (buildAppName) {
   // form the build command for the application
-  const buildCmd = "ng build " + buildAppName + " --prod --output-hashing=none --single-bundle=true";
+  const buildCmd = "ng build " + buildAppName + " --prod --output-hashing=none";
 
   // form the merge command for the application
   const mergeCmd = "npm run singlePackage " + buildAppName + "";
