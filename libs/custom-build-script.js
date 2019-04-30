@@ -14,9 +14,8 @@ for (let index = 2; index < args.length; index++) {
 var buildAppName = buildConfig.appName ? buildConfig.appName : DEFAULT_APP
 
 if (buildAppName) {
-  let prodFlag = buildConfig.prod && buildConfig.prod === 'true' ? ' --prod' : ''
   // form the build command for the application
-  const buildCmd = "ng build " + buildAppName + " --output-hashing=none --single-bundle true " + prodFlag;
+  const buildCmd = "ng build " + buildAppName + " --output-hashing=none --single-bundle true --prod";
 
   // form the merge command for the application
   const mergeCmd = "npm run singlePackage " + buildAppName + "";

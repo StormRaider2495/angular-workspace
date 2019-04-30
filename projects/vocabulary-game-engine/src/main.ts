@@ -3,8 +3,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
-import '@webcomponents/custom-elements/custom-elements.min.js';
+
+// import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+// import '@webcomponents/custom-elements/custom-elements.min.js';
+// import '@webcomponents/custom-elements/src/native-shim.js';
 
 if (environment.production) {
   enableProdMode();
