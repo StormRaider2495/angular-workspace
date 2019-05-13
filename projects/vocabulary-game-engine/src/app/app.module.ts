@@ -13,8 +13,8 @@ import { CommonGameComponentsModule } from '../../../common-game-components/src/
     CommonGameComponentsModule
   ],
   providers: [],
-  entryComponents: [AppComponent],
-  bootstrap: []
+  bootstrap: [],
+  entryComponents: [AppComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) {

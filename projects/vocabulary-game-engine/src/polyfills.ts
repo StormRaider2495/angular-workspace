@@ -80,6 +80,7 @@ import 'core-js/es7/reflect';
  *
  */
 // added as a fix for `cannot run code from a freed script` error in IE
+(window as any).__Zone_enable_cross_context_check = true;
 
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
@@ -94,18 +95,19 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /**  Polyfill needed for HTMLELEMENT creation */
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
 
-/**  Polyfills for Browsers supporting Custom Elements.
- * Needed b/c we downlevel to ES5. See: @webcomponents/custom-elements
- */
-import '@webcomponents/custom-elements/src/native-shim.js';
-
-/**  Polyfills for Browsers not supporting Custom Elements.
- * See: @webcomponents/custom-elements Consider only loading when such a browser is used
+/**
+ * Custom Elements `@webcomponents/custom-elements`
+ * We also need a polyfill for browsers that don't support Web Components.
+ * Hence, npm installed @webcomponents/custom-elements and referenced it here
  */
 import '@webcomponents/custom-elements/custom-elements.min.js';
 
-// if (!window.customElements) {
-//   const script = document.createElement('script');
-//   script.src = './assets/webcomponentsjs/bundles/webcomponents-sd-ce.js';
-//   document.writeln(script.outerHTML);
-// }
+/**
+ * The webcomponents-bundle.js contains all of the web components polyfills
+ * and is suitable for use on any supported browser. `https://github.com/WebComponents/webcomponentsjs`
+ * All of the polyfill code will be loaded but each polyfill will only be used based on feature detection.
+ * The bundle includes Custom Elements, Shady DOM/CSS and generic platform polyfills
+ * (such as ES6 Promise, Constructable events, etc.) (needed by Internet Explorer 11),
+ * and Template (needed by IE 11 and Edge).
+ */
+import '@webcomponents/webcomponentsjs/webcomponents-bundle.js';

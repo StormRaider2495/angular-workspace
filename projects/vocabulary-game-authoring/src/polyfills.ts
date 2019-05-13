@@ -101,3 +101,13 @@ import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
  * Hence, npm installed @webcomponents/custom-elements and referenced it here
  */
 import '@webcomponents/custom-elements/custom-elements.min.js';
+
+/**
+ * The webcomponents-bundle.js contains all of the web components polyfills
+ * and is suitable for use on any supported browser. `https://github.com/WebComponents/webcomponentsjs`
+ * All of the polyfill code will be loaded but each polyfill will only be used based on feature detection.
+ * The bundle includes Custom Elements, Shady DOM/CSS and generic platform polyfills
+ * (such as ES6 Promise, Constructable events, etc.) (needed by Internet Explorer 11),
+ * and Template (needed by IE 11 and Edge).
+ */
+import '@webcomponents/webcomponentsjs/webcomponents-bundle.js';

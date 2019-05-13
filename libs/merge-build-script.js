@@ -3,6 +3,7 @@ const MERGE = require('concat');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const DEFAULT_APP = "vocabulary-game-engine";
+const pretty = require('pretty');
 
 const args = process.argv.splice(2);
 
@@ -69,7 +70,7 @@ function updateScriptTags(indexHtmlPath, updatedHtmlPath, scriptPaths, newScript
 }
 
 function serializeDocumentObject(domObject) {
-  return domObject.documentElement.outerHTML
+  return pretty('<!doctype html>' + domObject.documentElement.outerHTML, {ocd: true});
 }
 
 function isScriptMerged(scriptSrc, scriptPaths) {

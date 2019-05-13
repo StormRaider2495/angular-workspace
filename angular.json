@@ -25,17 +25,15 @@
             "styles": [
               "projects/vocabulary-game-engine/src/styles.css"
             ],
-            "scripts": [
-              {
+            "scripts": [{
                 "input": "assets/custom-elements/src/native-shim.js"
-              },
-              {
+              }, {
                 "input": "assets/custom-elements/custom-elements.min.js"
-              },
-              {
+              }, {
                 "input": "assets/core-js/core.js"
-              },
-              {
+              }, {
+                "input": "assets/webcomponentsjs/webcomponents-bundle.js"
+              }, {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
             ],
@@ -164,14 +162,13 @@
             ],
             "scripts": [{
                 "input": "assets/custom-elements/src/native-shim.js"
-              },
-              {
+              }, {
                 "input": "assets/custom-elements/custom-elements.min.js"
-              },
-              {
+              }, {
                 "input": "assets/core-js/core.js"
-              },
-              {
+              }, {
+                "input": "assets/webcomponentsjs/webcomponents-bundle.js"
+              }, {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
             ],
